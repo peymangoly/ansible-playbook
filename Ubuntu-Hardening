@@ -1,0 +1,10 @@
+  - name: Ubuntu Hardening
+    hosts: ubuntu
+    tasks:
+    - name: Ubuntu_Hardening
+      script: /home/admin/ubuntuHardening/grub.sh
+      register: Ubuntu_Hardening
+      tags: Ubuntu_Hardening
+#    - debug:
+#        var: Ubuntu_Hardening.stdout_lines
+    - debug: msg="{{Ubuntu_Hardening.stdout}}"
