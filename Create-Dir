@@ -1,0 +1,11 @@
+  - name: Ubuntu Checking
+    hosts: ubuntu
+    tasks:
+
+    - name: Create Dir
+      script: /home/admin-sayan/ubuntuHardening/ubuntuCheck.sh
+      register: Ubuntu_Checking
+      tags: Ubuntu_Checking
+    - debug:
+        var: Ubuntu_Hardening.stdout_lines
+    - debug: msg="{{Ubuntu_Checking.stdout}}"
