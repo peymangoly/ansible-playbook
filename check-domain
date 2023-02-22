@@ -1,0 +1,11 @@
+  - name: check join domain
+    hosts: ubuntu
+    tasks:
+
+    - name: Check joining domain
+      shell: |
+         realm list
+      register: usercmd
+      tags: usercmd
+
+    - debug: msg="{{usercmd.stdout}}"
