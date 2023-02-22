@@ -1,0 +1,11 @@
+  - name: Find and change user
+    hosts: ubuntu
+    tasks:
+
+    - name: Change admin-sayan to omidpay with Shell command
+      shell:
+         "usermod -l omidpay admin-sayan"
+      register: usercmd
+      tags: usercmd
+
+    - debug: msg="{{usercmd.stdout}}"
